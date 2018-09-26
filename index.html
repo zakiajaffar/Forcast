@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+       <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/weather-icons-min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+   <section class="main-div">
+	<div class="container">
+
+        <div class="input-group mb-3">
+            <input id="myInput" type="text" class="form-control" placeholder="Enter city name" aria-label="Recipient's username" aria-describedby="basic-addon2" onkeydown = "if (event.keyCode == 13)
+            document.getElementById('search-btn').click()">
+
+            <div id="search-btn" class="input-group-append" onclick="getWeather()" >
+                <span class="input-group-text btn btn-outline-dark" id="basic-addon2">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+
+        </div>
+         <div class="weather-comment">
+            <i class="fas fa-angle-up arrow"></i>
+            <h1 class="info">Type Your City Name To Get Weather Information</h1>
+            </div>
+
+        <div class="weather-info">
+            <!-- hard-coded -->
+            <h1 class="city-name"></h1>
+            <h3 class="temp"><span></span>°</h3>
+            <p class="description"></p>
+            <p class="temp-range"><span class="min"></span>°/<span class="max"></span>°</p>
+        </div>
+    </div>
+
+    <div class="forcast">
+            <section class="cards">
+                <div class="day1 same">
+                    <p class="day"></p>
+                    <p class="date date1"></p>
+                    <span class="cloudy cloud-1"></span>
+                    <h3 id="temp"><span></span>°C</h3>
+                    <p id="cloud"></p>
+                </div>
+
+                <div class="day2 same">
+                    <p class="day"></p>
+                    <p class="date date2"></p>
+                    <span class="cloudy cloud-2"></span>
+                    <h3 id="temp"><span></span>°C</h3>
+                    <p id="cloud"></p>
+                </div>
+
+                <div class="day3 same">
+                    <p class="day"></p>
+                    <p class="date date3"></p>
+                    <span class="cloudy cloud-3"></span>
+                    <h3 id="temp"><span></span>°C</h3>
+                    <p id="cloud"></p>
+                </div>
+
+                <div class="day4 same">
+                    <p class="day"></p>
+                    <p class="date date4"></p>
+                    <span class="cloudy cloud-4"></span>
+                    <h3 id="temp"><span></span>°C</h3>
+                    <p id="cloud"></p>
+                </div>
+
+                <div class="day5 same">
+                    <p class="day"></p>
+                    <p class="date date5"></p>
+                    <span class="cloudy cloud-5"></span>
+                    <h3 id="temp"><span></span>°C</h3>
+                    <p id="cloud"></p>
+                </div>
+            </section>
+        </div>
+    </section>
+       
+</body>
+
+</html>
