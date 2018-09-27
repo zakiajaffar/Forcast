@@ -46,7 +46,8 @@ function getWeather() {
         url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=1cafa1aa713dc95fd5cd808d0df22dfc&units=metric`,
         success: function (data) {
             console.log(data);
-            
+            weatherType = data.weather[0].icon;
+            document.querySelector(".cloud").innerHTML = `<i class="wi ${getWeatherIcon(weatherType)}"></i>`;
             document.querySelector(".city-name").innerHTML = data.name;
             document.querySelector(".temp > span").innerHTML = Math.round(data.main.temp);
             document.querySelector(".description").innerHTML = data.weather[0].main;
@@ -59,46 +60,25 @@ function getWeather() {
 
             if (sunsetTime > calcTime && sunriseTime < calcTime){
 
-             document.querySelector("body").style["background-color"]='#FFA500';
+             document.querySelector("body").style["background-color"]='#4db4b2ba';
               document.querySelector("body").style["color"] = 'white'
+              let list = document.querySelectorAll(".cards div");
+              console.log(list);
+              for(let i = 0; i < list.length; i++){
+                list[i].style.border = "1px solid #1e3178";
+              }
         
          } else {
             document.querySelector("body").style["background-color"]='#000000';
-            document.querySelector("body").style["color"] = 'white'
+            document.querySelector("body").style["color"] = 'white';
+            let list = document.querySelectorAll(".cards div");
+              console.log(list);
+              for(let i = 0; i < list.length; i++){
+                list[i].style.border = "1px solid blue";
+              }
             }
 
 
-
-
-        // let weatherIcon = data.weather[0].description
-        
-        // if (weatherIcon == "haze"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class="wi wi-day-haze"></i>`;
-        // }else if (weatherIcon =="smoke"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class="wi wi-smoke"></i>`;
-
-        // }else if (weatherIcon == "few clouds"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class="wi wi-cloudy-gusts"></i>`;
-        // }
-        // else if (weatherIcon== "broken clouds"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class="wi wi-day-cloudy"></i>`;
-        // }else if (weatherIcon == "clear sky"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class=" wi wi-day-cloudy-high"></i>`;
-        // }else if (weatherIcon == "mist"){
-           
-        //     document.querySelector(".description").innerHTML=  `<i class=" wi wi-smog"></i>`;
-        // }else if (weatherIcon == "dust"){
-           
-        //     document.querySelector(".description").innerHTML=  `<i class=" wi wi-dust"></i>`;
-        // }else if (weatherIcon == "light rain"){
-            
-        //     document.querySelector(".description").innerHTML=  `<i class="wi wi-day-rain"></i>`;
-        // }
 
 
 
