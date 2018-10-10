@@ -63,12 +63,17 @@ function getWeather() {
             if (sunsetTime > calcTime && sunriseTime < calcTime){
                 document.querySelector("body").style["background-image"]=`url(picture.jpg)`;
                 document.querySelector("body").style["height"] =`100%`;
-                document.querySelector("body").style["color"] = 'white'
+                document.querySelector("body").style["color"] = 'white';
                 let list = document.querySelectorAll(".cards div");
                 console.log(list);
                 for(let i = 0; i < list.length; i++){
                     list[i].style.border = "1px solid #1e3178";
-                    
+                }
+                let list2 = document.querySelectorAll(".cloudy, .cloud");
+                console.log(list2);
+                for(let i = 0; i < list2.length; i++){
+                    list2[i].style.color = "#1e3178";
+                  
                 }
                 
             } else {

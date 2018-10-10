@@ -36,8 +36,9 @@ body{
 .wi{
     font-size: 44px;
     padding-top: 20px;
-    color:#1e3178;
 }
+    /* color:#1e3178;
+} */
 .weather-comment{
     margin-top: 100px;
     color: #484444;
